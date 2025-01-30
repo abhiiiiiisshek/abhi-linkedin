@@ -18,7 +18,7 @@ chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 
 # Initialize WebDriver (Make sure to fetch the correct ChromeDriver version)
-driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
+driver = webdriver.Chrome(service=Service(ChromeDriverManager(version="132.0.6834.83").install()), options=chrome_options)
 
 def login_to_linkedin():
     """Logs into LinkedIn"""
