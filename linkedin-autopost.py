@@ -16,6 +16,8 @@ chrome_options = Options()
 chrome_options.add_argument("--headless")  # Run in background
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
+chrome_options.binary_location = "/path/to/brave/browser"  # Update with your Brave browser path
+
 
 # Initialize WebDriver (Make sure to fetch the correct ChromeDriver version)
 driver = webdriver.Chrome(service=Service(ChromeDriverManager(version="132.0.6834.83").install()), options=chrome_options)
