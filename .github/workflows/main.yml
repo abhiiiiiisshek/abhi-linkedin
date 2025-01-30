@@ -2,7 +2,7 @@ name: Run LinkedIn Bot
 
 on:
   schedule:
-    - cron: '0 */4 * * *'  # Runs every 4 hours
+    - cron: '0 */2 * * *'  # Runs every 2 hours
   workflow_dispatch:  # Allows manual execution
 
 jobs:
@@ -18,7 +18,9 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install -r requirements.txt || echo "No dependencies"
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt || echo "No dependencies"
 
       - name: Run the bot
-        run: python bot.py
+        run: python linkedin-autopost.py
