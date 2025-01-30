@@ -1,9 +1,5 @@
-# File 3: requirements.txt
-# This file lists all the Python packages needed
-
 requests==2.31.0
 python-dotenv==1.0.0
 schedule==1.2.0
-selenium
-schedule
-webdriver-manager
+selenium==4.0.0
+webdriver-manager==3.5.0
