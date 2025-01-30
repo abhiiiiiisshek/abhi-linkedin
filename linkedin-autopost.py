@@ -17,7 +17,7 @@ chrome_options.add_argument("--headless")  # Run in background
 chrome_options.add_argument("--disable-gpu")
 chrome_options.add_argument("--no-sandbox")
 
-# Initialize WebDriver
+# Initialize WebDriver (Make sure to fetch the correct ChromeDriver version)
 driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=chrome_options)
 
 def login_to_linkedin():
@@ -56,11 +56,10 @@ def job():
     login_to_linkedin()
     post_on_linkedin()
 
-# Schedule the bot to run every 6 hours
-schedule.every(6).hours.do(job)
+# Schedule the bot to run every 2 hours
+schedule.every(2).hours.do(job)
 
 print("🔄 Running LinkedIn Bot...")
 while True:
     schedule.run_pending()
     time.sleep(60)  # Check every minute
-
