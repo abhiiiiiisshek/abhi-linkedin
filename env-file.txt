@@ -1,0 +1,5 @@
+# File 2: .env
+# This file contains your LinkedIn credentials
+
+LINKEDIN_ACCESS_TOKEN=your_access_token_here
+LINKEDIN_USER_ID=your_linkedin_user_id_here
