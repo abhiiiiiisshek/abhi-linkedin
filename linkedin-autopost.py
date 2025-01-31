@@ -203,26 +203,6 @@ class LinkedInPoster:
             self.take_screenshot("after_post")
             logger.info("Successfully posted to LinkedIn")
             
-        except Exception as e:
-            logger.error(f"Posting failed: {str(e)}")
-            logger.error(f"Traceback: {traceback.format_exc()}")
-            self.take_screenshot("post_error")
-            raise
-
-    def run_job(self):
-        """Execute the complete posting job with enhanced error handling"""
-        try:
-            self.setup_driver()
-            self.login()
-            post_content = self.generate_trending_post()
-            self.post_content(post_content)
-            logger.info("Job completed successfully")
-        except Exception as e:
-            logger.error(f"Job failed: {str(e)}")
-            logger.error(f"Traceback: {traceback.format_exc()}")
-            raise
-        finally:
-            if self.driver:
-                self.driver.quit()
-
-# Rest of the code remains the same...
+       
+::contentReference[oaicite:0]{index=0}
+ 
