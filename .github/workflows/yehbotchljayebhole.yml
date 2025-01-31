@@ -59,7 +59,7 @@ jobs:
         LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
         DEBUG: ${{ inputs.debug-enabled }}
       run: |
-        python linkedin_poster.py 2>&1 | tee logs/execution.log
+        python linkedin-autopost.py 2>&1 | tee logs/execution.log  # Changed the script name here
         
     - name: Check for script success
       run: |
