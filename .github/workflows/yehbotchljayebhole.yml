@@ -1,0 +1,31 @@
+name: LinkedIn Auto Post Bot
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"  # Runs every 6 hours
+  workflow_dispatch:  # Allows manual trigger
+
+jobs:
+  post_on_linkedin:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.10"
+
+      - name: Install Dependencies
+        run: |
+          pip install openai selenium schedule webdriver-manager
+
+      - name: Run LinkedIn Auto Post Bot
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          LINKEDIN_EMAIL: ${{ secrets.LINKEDIN_EMAIL }}
+          LINKEDIN_PASSWORD: ${{ secrets.LINKEDIN_PASSWORD }}
+          BRAVE_PATH: "/usr/bin/brave-browser"
+        run: python linkedin-autopost.py
